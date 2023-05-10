@@ -1,0 +1,372 @@
+Conda uses environments to load different sets of Python packages
+type conda env list to see the environments availible.
+
+
+This should work.
+
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/04/13 10:50:12 INFO SparkContext: Running Spark version 3.2.1
+22/04/13 10:50:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/04/13 10:50:13 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+22/04/13 10:50:13 INFO ResourceUtils: ==============================================================
+22/04/13 10:50:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/04/13 10:50:13 INFO ResourceUtils: ==============================================================
+22/04/13 10:50:13 INFO SparkContext: Submitted application: Scalab_Part1
+22/04/13 10:50:14 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/04/13 10:50:14 INFO ResourceProfile: Limiting resource is cpu
+22/04/13 10:50:14 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/04/13 10:50:14 INFO SecurityManager: Changing view acls to: act21sb
+22/04/13 10:50:14 INFO SecurityManager: Changing modify acls to: act21sb
+22/04/13 10:50:14 INFO SecurityManager: Changing view acls groups to: 
+22/04/13 10:50:14 INFO SecurityManager: Changing modify acls groups to: 
+22/04/13 10:50:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(act21sb); groups with view permissions: Set(); users  with modify permissions: Set(act21sb); groups with modify permissions: Set()
+22/04/13 10:50:15 INFO Utils: Successfully started service 'sparkDriver' on port 38244.
+22/04/13 10:50:15 INFO SparkEnv: Registering MapOutputTracker
+22/04/13 10:50:15 INFO SparkEnv: Registering BlockManagerMaster
+22/04/13 10:50:15 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/04/13 10:50:15 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/04/13 10:50:15 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/04/13 10:50:15 INFO DiskBlockManager: Created local directory at /mnt/fastdata/act21sb/blockmgr-28bc43c9-ff5d-4557-b2a5-24beb561828d
+22/04/13 10:50:15 INFO MemoryStore: MemoryStore started with capacity 10.5 GiB
+22/04/13 10:50:15 INFO SparkEnv: Registering OutputCommitCoordinator
+22/04/13 10:50:16 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/04/13 10:50:16 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://sharc-node175.shef.ac.uk:4040
+22/04/13 10:50:17 INFO Executor: Starting executor ID driver on host sharc-node175.shef.ac.uk
+22/04/13 10:50:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36629.
+22/04/13 10:50:17 INFO NettyBlockTransferService: Server created on sharc-node175.shef.ac.uk:36629
+22/04/13 10:50:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/04/13 10:50:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, sharc-node175.shef.ac.uk, 36629, None)
+22/04/13 10:50:17 INFO BlockManagerMasterEndpoint: Registering block manager sharc-node175.shef.ac.uk:36629 with 10.5 GiB RAM, BlockManagerId(driver, sharc-node175.shef.ac.uk, 36629, None)
+22/04/13 10:50:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, sharc-node175.shef.ac.uk, 36629, None)
+22/04/13 10:50:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, sharc-node175.shef.ac.uk, 36629, None)
+/home/act21sb/.conda/envs/myspark/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:238: FutureWarning: Python 3.6 support is deprecated in Spark 3.2.
+  FutureWarning
+22/04/13 10:50:19 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/04/13 10:50:19 INFO SharedState: Warehouse path is 'file:/data/act21sb/ACW/HPC/spark-warehouse'.
+
+
+Sample Randomly  1% of data from trainning set
+
+
+Training Subset Dataset Count: 50252
+
+
+Training Dataset Count: 5000000
+
+
+Test Dataset Count: 1000000
+
+
+Modify -1 values of the label column into 0s.
+22/04/13 10:51:01 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+
+ ### RANDOM FOREST ###
+
+
+ Vector assembler build
+
+
+ Pipeline build
+
+
+ Evaluator build
+
+
+ ParamGridBuilder build
+
+
+ CrossValidator build
+
+
+ CrossValidator fitting ..
+22/04/13 10:51:47 WARN DAGScheduler: Broadcasting large task binary with size 1732.0 KiB
+22/04/13 10:51:48 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:51:50 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:51:57 WARN DAGScheduler: Broadcasting large task binary with size 1732.0 KiB
+22/04/13 10:51:58 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:52:00 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:52:07 WARN DAGScheduler: Broadcasting large task binary with size 1732.1 KiB
+22/04/13 10:52:08 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:52:10 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:52:17 WARN DAGScheduler: Broadcasting large task binary with size 1732.0 KiB
+22/04/13 10:52:18 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:52:20 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:52:21 WARN DAGScheduler: Broadcasting large task binary with size 1819.0 KiB
+22/04/13 10:52:23 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:52:25 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:52:28 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:52:30 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:52:33 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:52:36 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:52:38 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:52:43 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:52:51 WARN DAGScheduler: Broadcasting large task binary with size 1732.0 KiB
+22/04/13 10:52:52 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:52:54 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:52:55 WARN DAGScheduler: Broadcasting large task binary with size 1819.0 KiB
+22/04/13 10:52:57 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:52:58 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:53:01 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:53:03 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:53:06 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:53:09 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:53:11 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:53:16 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:53:24 WARN DAGScheduler: Broadcasting large task binary with size 1732.0 KiB
+22/04/13 10:53:25 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:53:27 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:53:28 WARN DAGScheduler: Broadcasting large task binary with size 1819.0 KiB
+22/04/13 10:53:30 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:53:32 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:53:35 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:53:37 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:53:40 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:53:42 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:53:45 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:53:50 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:54:17 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:54:18 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:54:19 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:54:27 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:54:28 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:54:29 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:54:36 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:54:37 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:54:39 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:54:46 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:54:47 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:54:49 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:54:50 WARN DAGScheduler: Broadcasting large task binary with size 1818.6 KiB
+22/04/13 10:54:52 WARN DAGScheduler: Broadcasting large task binary with size 12.2 MiB
+22/04/13 10:54:54 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:54:57 WARN DAGScheduler: Broadcasting large task binary with size 20.8 MiB
+22/04/13 10:54:59 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:55:02 WARN DAGScheduler: Broadcasting large task binary with size 29.2 MiB
+22/04/13 10:55:04 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:55:08 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:55:12 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:55:20 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:55:21 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:55:23 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:55:24 WARN DAGScheduler: Broadcasting large task binary with size 1818.6 KiB
+22/04/13 10:55:26 WARN DAGScheduler: Broadcasting large task binary with size 12.2 MiB
+22/04/13 10:55:27 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:55:30 WARN DAGScheduler: Broadcasting large task binary with size 20.8 MiB
+22/04/13 10:55:32 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:55:36 WARN DAGScheduler: Broadcasting large task binary with size 29.2 MiB
+22/04/13 10:55:38 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:55:40 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:55:45 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:55:53 WARN DAGScheduler: Broadcasting large task binary with size 1731.7 KiB
+22/04/13 10:55:54 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:55:56 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:55:57 WARN DAGScheduler: Broadcasting large task binary with size 1818.6 KiB
+22/04/13 10:55:59 WARN DAGScheduler: Broadcasting large task binary with size 12.2 MiB
+22/04/13 10:56:01 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:56:04 WARN DAGScheduler: Broadcasting large task binary with size 20.8 MiB
+22/04/13 10:56:06 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:56:09 WARN DAGScheduler: Broadcasting large task binary with size 29.2 MiB
+22/04/13 10:56:12 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:56:15 WARN DAGScheduler: Broadcasting large task binary with size 33.5 MiB
+22/04/13 10:56:19 WARN DAGScheduler: Broadcasting large task binary with size 20.4 MiB
+22/04/13 10:56:46 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:56:47 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:56:48 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:56:55 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:56:56 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:56:58 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:57:05 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:57:06 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:57:08 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+22/04/13 10:57:15 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:57:16 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:57:18 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:57:19 WARN DAGScheduler: Broadcasting large task binary with size 1817.4 KiB
+22/04/13 10:57:21 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:57:22 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:57:25 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:57:28 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:57:31 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:57:33 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:57:36 WARN DAGScheduler: Broadcasting large task binary with size 33.4 MiB
+22/04/13 10:57:40 WARN DAGScheduler: Broadcasting large task binary with size 20.3 MiB
+22/04/13 10:57:48 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:57:49 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:57:51 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:57:52 WARN DAGScheduler: Broadcasting large task binary with size 1817.4 KiB
+22/04/13 10:57:54 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:57:56 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:57:59 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:58:01 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:58:04 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:58:06 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:58:09 WARN DAGScheduler: Broadcasting large task binary with size 33.4 MiB
+22/04/13 10:58:14 WARN DAGScheduler: Broadcasting large task binary with size 20.3 MiB
+22/04/13 10:58:22 WARN DAGScheduler: Broadcasting large task binary with size 1731.4 KiB
+22/04/13 10:58:23 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+22/04/13 10:58:25 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+22/04/13 10:58:26 WARN DAGScheduler: Broadcasting large task binary with size 1817.4 KiB
+22/04/13 10:58:28 WARN DAGScheduler: Broadcasting large task binary with size 12.1 MiB
+22/04/13 10:58:29 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+22/04/13 10:58:32 WARN DAGScheduler: Broadcasting large task binary with size 20.7 MiB
+22/04/13 10:58:35 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+22/04/13 10:58:38 WARN DAGScheduler: Broadcasting large task binary with size 29.1 MiB
+22/04/13 10:58:41 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+22/04/13 10:58:44 WARN DAGScheduler: Broadcasting large task binary with size 33.4 MiB
+22/04/13 10:58:48 WARN DAGScheduler: Broadcasting large task binary with size 20.3 MiB
+
+
+Accuracy of Random Forest Model after Cross-Validator 0.499462
+{
+	RandomForestClassifier_3039cc095446-bootstrap: true,
+	RandomForestClassifier_3039cc095446-cacheNodeIds: false,
+	RandomForestClassifier_3039cc095446-checkpointInterval: 10,
+	RandomForestClassifier_3039cc095446-featureSubsetStrategy: auto,
+	RandomForestClassifier_3039cc095446-featuresCol: features,
+	RandomForestClassifier_3039cc095446-impurity: gini,
+	RandomForestClassifier_3039cc095446-labelCol: _c128,
+	RandomForestClassifier_3039cc095446-leafCol: ,
+	RandomForestClassifier_3039cc095446-maxBins: 15,
+	RandomForestClassifier_3039cc095446-maxDepth: 5,
+	RandomForestClassifier_3039cc095446-maxMemoryInMB: 256,
+	RandomForestClassifier_3039cc095446-minInfoGain: 0.2,
+	RandomForestClassifier_3039cc095446-minInstancesPerNode: 1,
+	RandomForestClassifier_3039cc095446-minWeightFractionPerNode: 0.0,
+	RandomForestClassifier_3039cc095446-numTrees: 20,
+	RandomForestClassifier_3039cc095446-predictionCol: prediction,
+	RandomForestClassifier_3039cc095446-probabilityCol: probability,
+	RandomForestClassifier_3039cc095446-rawPredictionCol: rawPrediction,
+	RandomForestClassifier_3039cc095446-seed: -5387697053847413545,
+	RandomForestClassifier_3039cc095446-subsamplingRate: 1.0
+}
+5
+15
+0.2
+
+
+ Working with the larger Dataset with 10 Cores
+
+
+Trainning RF Model...
+
+
+Time to train model with 10 Cores: 81.589 seconds
+
+
+Time to test model with 10 Cores: 0.088 seconds
+
+
+ The pipeline Accuracy for RANDOM FOREST is with 10 Cores =  0.499462
+
+
+ The pipeline Area under the Curve for RANDOM FOREST is with 10 Cores =  0.5
+
+
+ ### LOGISTIC REGRESSION ###
+
+
+ Vector assembler build
+
+
+ Evaluator build
+
+
+ Pipeline build
+
+
+ ParamGridBuilder build
+
+
+ CrossValidator build
+22/04/13 11:00:37 WARN InstanceBuilder$NativeBLAS: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+22/04/13 11:00:37 WARN InstanceBuilder$NativeBLAS: Failed to load implementation from:dev.ludovic.netlib.blas.ForeignLinkerBLAS
+Accuracy of Logistic Regression Model after Cross-Validator =  0.499462
+{
+	LogisticRegression_d8cf8ff67d71-aggregationDepth: 2,
+	LogisticRegression_d8cf8ff67d71-elasticNetParam: 1.0,
+	LogisticRegression_d8cf8ff67d71-family: auto,
+	LogisticRegression_d8cf8ff67d71-featuresCol: features,
+	LogisticRegression_d8cf8ff67d71-fitIntercept: true,
+	LogisticRegression_d8cf8ff67d71-labelCol: _c128,
+	LogisticRegression_d8cf8ff67d71-maxBlockSizeInMB: 0.0,
+	LogisticRegression_d8cf8ff67d71-maxIter: 1,
+	LogisticRegression_d8cf8ff67d71-predictionCol: prediction,
+	LogisticRegression_d8cf8ff67d71-probabilityCol: probability,
+	LogisticRegression_d8cf8ff67d71-rawPredictionCol: rawPrediction,
+	LogisticRegression_d8cf8ff67d71-regParam: 0.01,
+	LogisticRegression_d8cf8ff67d71-standardization: true,
+	LogisticRegression_d8cf8ff67d71-threshold: 0.5,
+	LogisticRegression_d8cf8ff67d71-tol: 1.0E-6
+}
+0.01
+1.0
+1
+
+
+ Working with the larger Dataset with 10 Cores
+
+
+Trainning LR Model...
+
+
+Time to train model with 10 Cores: 43.884 seconds
+
+
+Time to test model with 10 Cores: 0.069 seconds
+
+
+ The pipeline Accuracy for Logistic Regression is with 10 Cores =  0.499462
+
+
+ The pipeline Area under the Curve for Logistic Regression is with 10 Cores=  0.5
+
+
+ Evaluator build
+
+
+ Pipeline build
+
+
+ ParamGridBuilder build
+
+
+ CrossValidator build
+22/04/13 11:03:27 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+22/04/13 11:03:27 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+Accuracy of Shallow Neural Network Model after CRoss-Validator = 0.499562
+{
+	MultilayerPerceptronClassifier_58a82314e338-blockSize: 128,
+	MultilayerPerceptronClassifier_58a82314e338-featuresCol: features,
+	MultilayerPerceptronClassifier_58a82314e338-labelCol: _c128,
+	MultilayerPerceptronClassifier_58a82314e338-layers: [I@510c39c4,
+	MultilayerPerceptronClassifier_58a82314e338-maxIter: 1,
+	MultilayerPerceptronClassifier_58a82314e338-predictionCol: prediction,
+	MultilayerPerceptronClassifier_58a82314e338-probabilityCol: probability,
+	MultilayerPerceptronClassifier_58a82314e338-rawPredictionCol: rawPrediction,
+	MultilayerPerceptronClassifier_58a82314e338-seed: -4740013646608911034,
+	MultilayerPerceptronClassifier_58a82314e338-solver: l-bfgs,
+	MultilayerPerceptronClassifier_58a82314e338-stepSize: 0.03,
+	MultilayerPerceptronClassifier_58a82314e338-tol: 1.0E-6
+}
+1e-06
+0.03
+1
+
+
+ Working with the larger Dataset with 10 Cores
+
+
+Trainning SNN Model...
+
+
+Time to train model with 10 Cores: 29.029 seconds
+
+
+Time to test model with 10 Cores: 0.069 seconds
+
+
+ The pipeline Accuracy for Shallow Neural Network is with 10 Cores=  0.499656
+
+
+ The pipeline Area under the Curve for Shallow Neural Network is with 10 Cores=  0.49949671742731144
